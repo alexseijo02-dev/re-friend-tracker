@@ -137,7 +137,53 @@
                         "type": "text",
                         "name": "GroupName",
                         "width": 2,
-                         "required": true
+                        "required": true
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },
+            {
+                "id": "ActivityForm",
+                "title": "Activity",
+                "url": "/activity",
+                "formFieldList": [
+                    {
+                        "id": "name",
+                        "type": "text",
+                        "name": "Name",
+                        "width": 2,
+                        "required": true  
+                    },
+                    {
+                        "id": "date",
+                        "type": "date",
+                        "name": "Date",
+                        "width": 1
+                    },
+                    {
+                        "id": "location",
+                        "type":"autocomplete",
+                        "name": "Location",
+                        "url": "/location",
+                        "form": "LocationForm",
+                        "width": 2
+                    },
+                    {
+                        "id": "comment",
+                        "type": "textarea",
+                        "name": "Comments",
+                        "width": 2
                     },
                     {
                         "type": "deleteButton",
@@ -163,22 +209,29 @@
                         "type": "button",
                         "name": "Friends",
                         "icon": "fa-user",
-                        "color": "blue",
+                        "color": "teal",
                         "page": "friendspage"
                     },
                     {
                         "type": "button",
                         "name": "Location",
                         "icon": "fa-cubes",
-                        "color": "yellow",
+                        "color": "turquoise",
                         "page": "locationspage"
                     },
                     {
                         "type": "button",
                         "name": "Groups",
                         "icon": "fa-weixin",
-                        "color": "pumpkin",
+                        "color": "emerald",
                         "page": "groupspage"
+                    },
+                    {
+                        "type": "button",
+                        "name": "Activities",
+                        "icon": "fa-hiking",
+                        "color": "lime",
+                        "page": "activitiespage"
                     }
                 ]
             },
@@ -259,7 +312,34 @@
                         "search": true,
                         "url": "/group",
                         "form": {
-                        "form": "GroupForm"
+                            "form": "GroupForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "activitiespage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "NewActivity",
+                        "icon": "fa-hiking",
+                        "color": "lime",
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "icon": "fa-hiking",
+                        "color": "lime",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "ActivityForm"
                         }
                     }
                 ]
